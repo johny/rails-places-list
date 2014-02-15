@@ -9,6 +9,7 @@ class CreateCities < ActiveRecord::Migration
     end
 
     add_index :cities, :slug, unique: true
+    add_index :cities, :workflow_state, unique: false
 
   end
 end

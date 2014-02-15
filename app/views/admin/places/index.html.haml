@@ -1,0 +1,39 @@
+%div.page-header
+  %h1 Miejsca
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Slug
+      %th Description
+      %th Street address
+      %th Zipcode
+      %th City
+      %th Phone
+      %th Website
+      %th Email
+      %th Workflow state
+      %th
+      %th
+      %th
+  %tbody
+    - @places.each do |place|
+      %tr
+        %td= place.name
+        %td= place.slug
+        %td= place.description
+        %td= place.street_address
+        %td= place.zipcode
+        %td= place.city.name
+        %td= place.phone
+        %td= place.website
+        %td= place.email
+        %td= place.workflow_state
+        %td= link_to 'Show', admin_place_path(place)
+        %td= link_to 'Edit', edit_admin_place_path(place)
+        %td= link_to 'Destroy', admin_place_path(place), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Place', new_admin_place_path, class: "btn btn-primary"

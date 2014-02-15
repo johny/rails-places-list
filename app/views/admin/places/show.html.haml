@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @place.name
+%p
+  %b Slug:
+  = @place.slug
+%p
+  %b Description:
+  = @place.description
+%p
+  %b Street address:
+  = @place.street_address
+%p
+  %b Zipcode:
+  = @place.zipcode
+%p
+  %b City:
+  = @place.city_id
+%p
+  %b Phone:
+  = @place.phone
+%p
+  %b Website:
+  = @place.website
+%p
+  %b Email:
+  = @place.email
+%p
+  %b Workflow state:
+  = @place.workflow_state
+
+= link_to 'Edit', edit_place_path(@place)
+\|
+= link_to 'Back', places_path

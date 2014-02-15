@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140215093553) do
+ActiveRecord::Schema.define(version: 20140215101417) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140215093553) do
   end
 
   add_index "cities", ["slug"], name: "index_cities_on_slug", unique: true, using: :btree
+  add_index "cities", ["workflow_state"], name: "index_cities_on_workflow_state", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -35,5 +36,23 @@ ActiveRecord::Schema.define(version: 20140215093553) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "places", force: true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.text     "description"
+    t.string   "street_address"
+    t.string   "zipcode"
+    t.integer  "city_id"
+    t.string   "phone"
+    t.string   "website"
+    t.string   "email"
+    t.string   "workflow_state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "places", ["slug"], name: "index_places_on_slug", unique: true, using: :btree
+  add_index "places", ["workflow_state"], name: "index_places_on_workflow_state", using: :btree
 
 end

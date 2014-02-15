@@ -1,0 +1,17 @@
+%div.page-header
+  %h1 #{@place.name}
+
+%div.row
+  %div.col-xs-8
+    = simple_format @place.description
+  %div.col-xs-4
+    %div.panel.panel-default
+      %div.panel-body
+        %h4 Adres:
+        %address
+          %span= @place.name
+          %span= @place.street_address
+          %span #{@place.zipcode} #{@place.city.name}
+          %span= @place.phone
+          %span= @place.website
+          %span= @place.email

@@ -1,0 +1,8 @@
+%div.page-header
+  %h1 #{@city.name} - Fryzjerzy
+
+%div.list-group
+  - @places.each do |place|
+    = link_to city_place_path(@city, place), class: 'list-group-item' do
+      %h3= place.name
+      %p= place.description

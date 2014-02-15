@@ -1,0 +1,25 @@
+
+.navbar{
+  margin: 0;
+}
+
+header{
+  border-bottom: 1px solid #fafafa;
+  margin: 0 0 10px 0;
+}
+
+.navbar-brand{
+  background: url('logo.png') 0 50% no-repeat;
+  width: 200px;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+address{
+  span{
+    display: block;
+  }
+}

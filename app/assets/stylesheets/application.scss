@@ -1,1 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,latin-ext);
+
+$font-family-serif: "Roboto Slab", Georgia, Times;
+$font-family-base: $font-family-serif;
+
 @import "bootstrap";
+@import "site";

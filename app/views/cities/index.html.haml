@@ -8,3 +8,13 @@
     %li Zależy Ci na takim ścięciu i uczesaniu, abt fryzura nie padała po 15 minutach od wyjścia od fryzjera.
 
   %p U nas znajdziesz najlepszego fryzjera!
+
+
+%h2 Wybierz miasto
+%div.row
+  - @cities.each do |city|
+    .col-sm-6.col-md-3
+      .thumbnail
+        = link_to city_places_path(city) do
+          = image_tag "cities/krakow.jpg", alt: city.name
+          .caption= link_to city.name, city_places_path(city)

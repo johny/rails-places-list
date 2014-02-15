@@ -1,0 +1,9 @@
+%nav.navbar.navbar-default.navbar-static-top{role: "navigation"}
+  .container-fluid
+    .navbar-header
+      %a.navbar-brand{href: "#"} JakiFryzjer
+    / Collect the nav links, forms, and other content for toggling
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          = link_to "Miasta", admin_cities_path

@@ -6,3 +6,6 @@
     = link_to city_place_path(@city, place), class: 'list-group-item' do
       %h3= place.name
       %p= place.description
+
+
+  = paginate @places

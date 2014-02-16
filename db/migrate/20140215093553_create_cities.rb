@@ -4,7 +4,6 @@ class CreateCities < ActiveRecord::Migration
       t.string :name
       t.string :slug
       t.string :workflow_state
-
       t.timestamps
     end
 

@@ -9,8 +9,18 @@ Local::Application.routes.draw do
   end
 
   namespace :admin do
-    resources :cities
-    resources :places
+    resources :cities do
+      member do
+        patch :disable
+        patch :enable
+      end
+    end
+    resources :places do
+      member do
+        patch :disable
+        patch :enable
+      end
+    end
   end
 
 end

@@ -8,5 +8,6 @@
 
 %body
   = render partial: 'layouts/partials/header'
-  %div.container
+  %div.container.page-container
     = yield
+  = render partial: 'layouts/partials/footer'

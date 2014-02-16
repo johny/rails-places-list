@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140215101417) do
+ActiveRecord::Schema.define(version: 20140216220103) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140215101417) do
     t.string   "workflow_state"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "places_count",   default: 0
   end
 
   add_index "cities", ["slug"], name: "index_cities_on_slug", unique: true, using: :btree
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140215101417) do
     t.string   "workflow_state"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "source"
   end
 
   add_index "places", ["slug"], name: "index_places_on_slug", unique: true, using: :btree

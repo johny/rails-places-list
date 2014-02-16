@@ -22,10 +22,12 @@
       %tr
         %td= place.name
         %td= place.slug
-        %td= place.description
+        %td= truncate(place.description, length: 100)
         %td= place.street_address
         %td= place.zipcode
-        %td= place.city.name
+        %td
+          - unless place.city.nil?
+            = place.city.name
         %td= place.phone
         %td= place.website
         %td= place.email

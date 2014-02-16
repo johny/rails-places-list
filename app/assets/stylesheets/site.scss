@@ -1,25 +1,72 @@
+.header{
+  background: url('bg.png') 0 0 repeat;
 
-.navbar{
-  margin: 0;
+
+  .container{
+    position: relative;
+    height: 120px;
+  }
+
+  .brand{
+    background: url('logo-white.png') 0 50% no-repeat;
+    width: 188px;
+    height: 81px;
+    display: inline-block;
+    text-indent: -9999px;
+    position: absolute;
+    left: 0;
+    top: 20px;
+  }
+
+  .nav{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    a{
+      color: #fff;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 1px;
+
+      &:hover{
+        color: #333;
+        background: #fff;
+      }
+    }
+  }
 }
 
-header{
-  border-bottom: 1px solid #fafafa;
-  margin: 0 0 10px 0;
-}
-
-.navbar-brand{
-  background: url('logo.png') 0 50% no-repeat;
-  width: 200px;
-  height: 100px;
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  text-indent: -9999px;
+.jumbotron{
+  margin-top: 30px;
 }
 
 address{
   span{
     display: block;
   }
+}
+
+.image{
+  max-height: 160px;
+  display: inline-block;
+  overflow: hidden;
+
+  img{
+    width: 100%;
+  }
+}
+
+.page-container{
+  min-height: 520px;
+}
+
+.footer{
+  min-height: 100px;
+  margin-top: 10px;
+  padding-top: 10px;
+  background: url('gray.png');
+  border-top: 1px dotted #eee;
 }

@@ -24,10 +24,15 @@ gem 'haml-rails'
 gem 'turbolinks'
 
 gem 'friendly_id', '~> 5.0.0'
-
+gem 'workflow'
+gem 'kaminari'
 
 group :development do
   gem 'thin'
-  gem 'capistrano'
-
+  gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'seed_dump'
+  gem 'nokogiri'
 end

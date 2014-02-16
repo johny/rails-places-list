@@ -1,20 +1,18 @@
 %div.jumbotron
-  %h1 Jaki fryzjer?
-  %p Znajdź najlepszego fryzjera w Twoim mieście.
+  %h2 Jaki fryzjer?
+  %p To nasz odwieczny dylemat. W naszym serwisie obiecujemy zająć się tym tematem na poważnie. Bez ściemy, promocji i naciąganych ocen.
 
-  %ul
-    %li Poszukujsze naprawdę dobrego fryzjera w Twoim mieście?
-    %li Szukasz fryzjera który ma na tyle talentu aby wymyślić Ci zgrabną fryzurkę dopasowaną do twarzy, figury i jakości Twoich włosów?
-    %li Zależy Ci na takim ścięciu i uczesaniu, abt fryzura nie padała po 15 minutach od wyjścia od fryzjera.
-
-  %p U nas znajdziesz najlepszego fryzjera!
+  %p Szukasz fryzjera który ma na tyle talentu aby wymyślić Ci zgrabną fryzurę dopasowaną do twarzy, figury i jakości Twoich włosów? &mdash; pomożemy Ci go znaleźć!
 
 
-%h2 Wybierz miasto
 %div.row
   - @cities.each do |city|
-    .col-sm-6.col-md-3
+    .col-sm-6.col-md-4
       .thumbnail
         = link_to city_places_path(city) do
-          = image_tag "cities/krakow.jpg", alt: city.name
-          .caption= link_to city.name, city_places_path(city)
+          %span.image
+            = image_tag "cities/#{city.slug}.jpg", alt: city.name
+          .caption
+            = link_to city.name, city_places_path(city)
+            &mdash;
+            == #{city.places_count} obiektów

@@ -2,7 +2,7 @@ class PlacesController < ApplicationController
 
   def index
     @city = City.friendly.find(params[:city_id])
-    @places = @city.places
+    @places = @city.places.page params[:page]
   end
 
   def show

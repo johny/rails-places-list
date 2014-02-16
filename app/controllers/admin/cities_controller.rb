@@ -1,9 +1,9 @@
 class Admin::CitiesController < Admin::AdminController
-  before_action :set_city, only: [:show, :edit, :update, :destroy]
+  before_action :set_city, except: [:index, :new, :create]
 
   # GET /cities
   def index
-    @cities = City.all
+    @cities = City.order(places_count: :desc).limit(10)
   end
 
   # GET /cities/1
@@ -39,6 +39,25 @@ class Admin::CitiesController < Admin::AdminController
     end
   end
 
+
+  # PATCH/PUT /cities/1/enable
+  def enable
+    if @city.enable!
+      redirect_to admin_cities_path, notice: "City #{@city.name} was successfully enabled."
+    else
+      redirect_to admin_cities_path, error: "City #{@city.name} could not be enabled."
+    end
+  end
+
+  # PATCH/PUT /cities/1/disable
+  def disable
+    if @city.disable!
+      redirect_to admin_cities_path, notice: "City #{@city.name} was successfully disabled."
+    else
+      redirect_to admin_cities_path, error: "City #{@city.name} could not be disabled."
+    end
+  end
+
   # DELETE /cities/1
   def destroy
     @city.destroy
@@ -48,7 +67,7 @@ class Admin::CitiesController < Admin::AdminController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_city
-      @city = City.find(params[:id])
+      @city = City.friendly.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

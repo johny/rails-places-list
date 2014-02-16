@@ -6,16 +6,21 @@
     %tr
       %th Name
       %th Slug
-      %th Workflow state
-      %th
-      %th
-      %th
+      %th Places
+      %th Status
+      %th{colspan: 4} Actions
   %tbody
     - @cities.each do |city|
       %tr
         %td= city.name
         %td= city.slug
+        %td= city.places.size
         %td= city.workflow_state
+        %td
+          - if city.enabled?
+            = link_to "Disable", disable_admin_city_path(city), method: :patch
+          - else
+            = link_to "Enable", enable_admin_city_path(city), method: :patch
         %td= link_to 'Show', admin_city_path(city)
         %td= link_to 'Edit', edit_admin_city_path(city)
         %td= link_to 'Destroy', admin_city_path(city), :method => :delete, :data => { :confirm => 'Are you sure?' }

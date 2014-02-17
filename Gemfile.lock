@@ -113,6 +113,8 @@ GEM
     seed_dump (3.1.0)
       activerecord
       activesupport
+    sitemap_generator (5.0.0)
+      builder
     sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -168,6 +170,7 @@ DEPENDENCIES
   rails_autolink
   sass-rails (~> 4.0.0)
   seed_dump
+  sitemap_generator
   thin
   turbolinks
   uglifier (>= 1.3.0)

@@ -1,12 +1,17 @@
 !!!
 %html
   %head
-    %title Jaki Fryzjer.pl
+    %title= content_for?(:title) ? yield(:title) : 'JakiFryzjer.pl'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'JakiFryzjer.pl'}"}
+    %meta{charset: "utf-8"}
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
-
   %body
+    - if Rails.env == 'production'
+      = render partial: 'layouts/partials/gat'
     = render partial: 'layouts/partials/header'
     %div.container.page-container
       = yield

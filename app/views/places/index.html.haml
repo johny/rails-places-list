@@ -1,5 +1,5 @@
 %div.page-header
-  %h1 #{@city.name} - Fryzjerzy
+  %h1 Jaki fryzjer #{@city.adjective}?
 
 %div.list-group
   - @places.each do |place|
@@ -9,3 +9,9 @@
 
 
   = paginate @places
+
+
+- content_for :title do
+  Jaki fryzjer #{@city.adjective}? Sprawdź na jakifryzjer.pl
+- content_for :description do
+  Znajdź najlepszego fryzjera #{@city.adjective}. Tu znajdziesz opisy miejsc, zdjęcia i recenzje.

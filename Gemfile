@@ -27,6 +27,7 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'workflow'
 gem 'kaminari'
 gem 'rails_autolink'
+gem 'sitemap_generator'
 
 group :development do
   gem 'thin'

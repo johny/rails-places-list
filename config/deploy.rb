@@ -53,4 +53,16 @@ namespace :deploy do
     end
   end
 
+
+  desc 'Runs rake db:seed if migrations are set'
+  task :db_seed do
+    on roles(:db) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "db:seed"
+        end
+      end
+    end
+  end
+
 end

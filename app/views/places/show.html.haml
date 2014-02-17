@@ -13,5 +13,5 @@
           %span= @place.street_address
           %span #{@place.zipcode} #{@place.city.name}
           %span= @place.phone
-          %span= @place.website
-          %span= @place.email
+          %span= auto_link @place.website
+          %span= auto_link @place.email

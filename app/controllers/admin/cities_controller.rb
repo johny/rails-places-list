@@ -72,6 +72,6 @@ class Admin::CitiesController < Admin::AdminController
 
     # Only allow a trusted parameter "white list" through.
     def city_params
-      params.require(:city).permit(:name, :slug, :workflow_state)
+      params.require(:city).permit(:name, :slug, :adjective, :workflow_state)
     end
 end

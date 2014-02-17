@@ -11,7 +11,7 @@
       .thumbnail
         = link_to city_places_path(city) do
           %span.image
-            = image_tag "cities/#{city.slug}.jpg", alt: city.name
+            = image_tag "cities/#{city.name.to_s.parameterize}.jpg", alt: city.name
           .caption
             = link_to city.name, city_places_path(city)
             &mdash;

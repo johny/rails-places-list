@@ -1,13 +1,13 @@
 !!!
 %html
-%head
-  %title Jaki Fryzjer.pl
-  = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-  = javascript_include_tag "application", "data-turbolinks-track" => true
-  = csrf_meta_tags
+  %head
+    %title Jaki Fryzjer.pl
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
 
-%body
-  = render partial: 'layouts/partials/header'
-  %div.container.page-container
-    = yield
-  = render partial: 'layouts/partials/footer'
+  %body
+    = render partial: 'layouts/partials/header'
+    %div.container.page-container
+      = yield
+    = render partial: 'layouts/partials/footer'

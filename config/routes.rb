@@ -5,7 +5,7 @@ Local::Application.routes.draw do
   root 'cities#index'
 
   resources :cities, path: "/", only: [:index] do
-    resources :places, only: [:index, :show], path: "salony-fryzjerskie"
+    resources :places, only: [:index, :show], path: "salony"
   end
 
   namespace :admin do

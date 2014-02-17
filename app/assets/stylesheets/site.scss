@@ -1,5 +1,5 @@
 .header{
-  background: url('bg.png') 0 0 repeat;
+  background: url(asset_path('bg.png')) 0 0 repeat;
 
 
   .container{
@@ -8,7 +8,7 @@
   }
 
   .brand{
-    background: url('logo-white.png') 0 50% no-repeat;
+    background: url(asset_path('logo-white.png')) 0 50% no-repeat;
     width: 188px;
     height: 81px;
     display: inline-block;
@@ -67,6 +67,6 @@ address{
   min-height: 100px;
   margin-top: 10px;
   padding-top: 10px;
-  background: url('gray.png');
+  background: url(asset_path('gray.png'));
   border-top: 1px dotted #eee;
 }

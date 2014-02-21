@@ -3,7 +3,7 @@ class Admin::PlacesController < Admin::AdminController
 
   # GET /places
   def index
-    @places = Place.all
+    @places = Place.all.page params[:page]
   end
 
   # GET /places/1
@@ -48,7 +48,7 @@ class Admin::PlacesController < Admin::AdminController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_place
-      @place = Place.find(params[:id])
+      @place = Place.friendly.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

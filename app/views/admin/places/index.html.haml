@@ -1,18 +1,15 @@
 %div.page-header
   %h1 Miejsca
 
+= paginate @places
 %table.table
   %thead
     %tr
       %th Name
       %th Slug
-      %th Description
-      %th Street address
-      %th Zipcode
-      %th City
+      %th Address
       %th Phone
-      %th Website
-      %th Email
+      %th Website / Email
       %th Workflow state
       %th
       %th
@@ -22,19 +19,22 @@
       %tr
         %td= place.name
         %td= place.slug
-        %td= truncate(place.description, length: 100)
-        %td= place.street_address
-        %td= place.zipcode
         %td
+          = place.street_address
+          %br
+          = place.zipcode
           - unless place.city.nil?
             = place.city.name
         %td= place.phone
-        %td= place.website
-        %td= place.email
-        %td= place.workflow_state
+        %td
+          = place.website
+          = place.email
+        %td
+          = place.workflow_state
         %td= link_to 'Show', admin_place_path(place)
         %td= link_to 'Edit', edit_admin_place_path(place)
         %td= link_to 'Destroy', admin_place_path(place), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
 
 %br
 

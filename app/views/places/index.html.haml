@@ -7,11 +7,11 @@
     Jaki fryzjer #{@city.adjective}?
     %small Lista salonów fryzjerskich
 
-%div.list-group
+%div.list-group.places-list
   - @places.each do |place|
     = link_to city_place_path(@city, place), class: 'list-group-item' do
       %h3= place.name
-      %p= place.description
+      %p= truncate place.description, length: 320
 
 
   = paginate @places

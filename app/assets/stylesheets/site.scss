@@ -40,7 +40,7 @@
 }
 
 .jumbotron{
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 address{
@@ -60,11 +60,14 @@ address{
 }
 
 .page-container{
+
+  padding-top: 20px;
   min-height: 520px;
 
-  > .alert{
+  .page-header{
     margin-top: 20px;
   }
+
 }
 
 .footer{

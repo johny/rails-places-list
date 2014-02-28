@@ -1,3 +1,8 @@
+%ol.breadcrumb
+  %li= link_to "Fryzjer", root_path
+  %li= link_to @place.city.adjective, city_places_path(@place.city)
+  %li= @place.name
+
 %div.page-header
   %h1 #{@place.name}
 
@@ -31,4 +36,4 @@
   #{@place.name} - Profil na jakifryzjer.pl
 
 - content_for :description do
-  Sprawdź opinie o »#{@place.name}«, zobacz opis miejsa, zdjęcia i recenzje tego salonu fryzjerskiego.
+  Sprawdź opinie o »#{@place.name}« #{@place.city.adjective}. Zobacz opis miejsa, zdjęcia i recenzje tego salonu fryzjerskiego.

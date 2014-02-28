@@ -1,5 +1,11 @@
+%ol.breadcrumb
+  %li= link_to "Fryzjer", root_path
+  %li.active #{@city.adjective}
+
 %div.page-header
-  %h1 Jaki fryzjer #{@city.adjective}?
+  %h1
+    Jaki fryzjer #{@city.adjective}?
+    %small Lista salonów fryzjerskich
 
 %div.list-group
   - @places.each do |place|

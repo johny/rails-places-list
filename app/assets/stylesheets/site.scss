@@ -61,11 +61,15 @@ address{
 
 .page-container{
   min-height: 520px;
+
+  > .alert{
+    margin-top: 20px;
+  }
 }
 
 .footer{
   min-height: 100px;
-  margin-top: 10px;
+  margin-top: 50px;
   padding-top: 10px;
   background: url(asset_path('gray.png'));
   border-top: 1px dotted #eee;

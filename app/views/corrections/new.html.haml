@@ -1,0 +1,27 @@
+%div.page-header
+  %h1
+    Dodaj opis / Zgłoś poprawkę
+    %small= @place.name
+
+%div.row
+  %div.col-xs-8
+    = render 'form'
+  %div.col-xs-4
+    %div.panel.panel-default
+      %div.panel-body
+        %h4= @place.name
+        %address
+          %span= @place.street_address
+          %span #{@place.zipcode} #{@place.city.name}
+          %span= @place.phone
+          %span= auto_link @place.website
+          %span= auto_link @place.email
+
+- content_for :title do
+  #{@place.name} - Profil na jakifryzjer.pl
+
+- content_for :description do
+  Sprawdź opinie o »#{@place.name}«, zobacz opis miejsa, zdjęcia i recenzje tego salonu fryzjerskiego.
+
+- content_for :head do
+  %meta{name: 'robots', content: 'noindex'}

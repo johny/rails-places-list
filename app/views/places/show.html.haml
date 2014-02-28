@@ -3,7 +3,18 @@
 
 %div.row
   %div.col-xs-8
-    = simple_format @place.description
+    - if @place.description
+      = simple_format @place.description
+    - else
+      /googleoff: index
+      %div.well
+        - if @place.corrections.size > 0
+          %p Opis salonu oczekuje na weryfikację
+          = link_to "Zgłoś poprawki", new_place_correction_path(@place), class: "btn btn-primary"
+        - else
+          %p Ten salon nie posiada jeszcze swojego opisu.
+          = link_to "Dodaj opis", new_place_correction_path(@place), class: "btn btn-primary"
+      /googleon: index
   %div.col-xs-4
     %div.panel.panel-default
       %div.panel-body
@@ -15,7 +26,6 @@
           %span= @place.phone
           %span= auto_link @place.website
           %span= auto_link @place.email
-
 
 - content_for :title do
   #{@place.name} - Profil na jakifryzjer.pl

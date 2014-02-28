@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140217083923) do
+ActiveRecord::Schema.define(version: 20140228210125) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -25,6 +25,21 @@ ActiveRecord::Schema.define(version: 20140217083923) do
 
   add_index "cities", ["slug"], name: "index_cities_on_slug", unique: true, using: :btree
   add_index "cities", ["workflow_state"], name: "index_cities_on_workflow_state", using: :btree
+
+  create_table "corrections", force: true do |t|
+    t.integer  "place_id"
+    t.string   "name"
+    t.text     "description"
+    t.text     "comments"
+    t.string   "street_address"
+    t.string   "zipcode"
+    t.string   "city"
+    t.string   "phone"
+    t.string   "website"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false

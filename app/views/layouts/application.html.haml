@@ -6,6 +6,8 @@
     %meta{charset: "utf-8"}
     %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
+    - if content_for? :head
+      = yield :head
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
@@ -14,5 +16,6 @@
       = render partial: 'layouts/partials/gat'
     = render partial: 'layouts/partials/header'
     %div.container.page-container
+      = render 'layouts/partials/messages'
       = yield
     = render partial: 'layouts/partials/footer'

@@ -6,7 +6,11 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
-  %body
+  %body.admin
     = render partial: 'admin/layouts/partials/header'
     %div.container
       = yield
+
+    %footer.footer
+      .container
+        %p JakiFryzjer.pl &copy; 2014

@@ -1,0 +1,62 @@
+- unless @correction.comments.blank?
+  %div.well
+    = simple_format @correction.comments
+%div.row
+  %div.col-md-6
+    = form_for [:admin, @place] do |f|
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: 'form-control'
+      .form-group
+        = f.label :description
+        = f.text_area :description, class: 'form-control pdesc', rows: 12
+      -#
+        .form-group
+          = f.label :street_address
+          = f.text_field :street_address, class: 'form-control'
+        .form-group
+          = f.label :zipcode
+          = f.text_field :zipcode, class: 'form-control'
+        .form-group
+          = f.label :city_id
+          = f.collection_select :city_id, City.all, :id, :name, {}, class: 'form-control'
+      .form-group
+        = f.label :phone
+        = f.text_field :phone, class: 'form-control'
+      .form-group
+        = f.label :website
+        = f.text_field :website, class: 'form-control'
+      .form-group
+        = f.label :email
+        = f.text_field :email, class: 'form-control'
+      .actions
+        = f.submit 'Update place', class: 'btn btn-primary btn-lg'
+  %div.col-md-6
+    .form-group
+      %label.control-label Name:
+      %p.form-control-static
+        %input.form-control{value: @place.name, disabled: true}
+
+    .form-group
+      %label.control-label
+        Description:
+        %button.btn.btn-default.btn-xs.btn-copy-description copy to place
+
+      %p.form-control-static
+        %textarea.form-control.cdesc{rows: 12}
+          = @correction.description
+
+    .form-group
+      %label.control-label Phone:
+      %p.form-control-static
+        %input.form-control{value: @place.phone, disabled: true}
+
+    .form-group
+      %label.control-label Website:
+      %p.form-control-static
+        %input.form-control{value: @place.website, disabled: true}
+
+    .form-group
+      %label.control-label Email:
+      %p.form-control-static
+        %input.form-control{value: @place.email, disabled: true}

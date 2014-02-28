@@ -1,0 +1,29 @@
+= form_for [@place, @correction] do |f|
+  - if @correction.errors.any?
+    %p Formularz posiada błędy!
+
+  %div.row
+    %div.col-md-7
+      .form-group
+        = f.label :description, "Uzupełnij opis miejsca:"
+        = f.text_area :description, class: 'form-control', rows: 15
+    %div.col-md-5
+      - if @place.phone.blank?
+        .form-group
+          = f.label :phone, "Telefon:"
+          = f.text_field :phone, class: 'form-control'
+      - if @place.website.blank?
+        .form-group
+          = f.label :website, "Strona WWW:"
+          = f.text_field :website, class: 'form-control'
+      - if @place.email.blank?
+        .form-group
+          = f.label :email, "Adres email:"
+          = f.text_field :email, class: 'form-control'
+
+      .form-group
+        = f.label :comments, "Inne uwagi:"
+        = f.text_area :comments, class: 'form-control', rows: 3
+
+  .actions
+    = f.submit 'Zgłoś poprawkę', class: "btn btn-primary btn-lg"

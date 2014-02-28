@@ -3,7 +3,7 @@ class Place < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   belongs_to :city, counter_cache: true
-
+  has_many :corrections
 
 
   def self.crawl

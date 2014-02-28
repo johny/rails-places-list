@@ -16,7 +16,9 @@
           %span= auto_link @place.website
           %span= auto_link @place.email
 
+
 - content_for :title do
   #{@place.name} - Profil na jakifryzjer.pl
+
 - content_for :description do
-  Sprawdź opinie, opis miejsa, zdjęcia i recenzje tego salonu fryzjerskiego.
+  Sprawdź opinie o »#{@place.name}«, zobacz opis miejsa, zdjęcia i recenzje tego salonu fryzjerskiego.

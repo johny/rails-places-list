@@ -9,7 +9,7 @@
 %div.row
   %div.col-xs-8
     - if @place.description
-      = simple_format @place.description
+      = simple_format auto_link @place.description
     - else
       /googleoff: index
       %div.well

@@ -20,6 +20,11 @@
           %p Ten salon nie posiada jeszcze swojego opisu.
           = link_to "Dodaj opis", new_place_correction_path(@place), class: "btn btn-primary"
       /googleon: index
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title Komentarze i opinie
+      .panel-body
+        = render 'places/disqus'
   %div.col-xs-4
     %div.panel.panel-default
       %div.panel-body

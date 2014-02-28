@@ -1,40 +1,34 @@
 source 'https://rubygems.org'
+ruby '2.1.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
-
-# Use mysql as the database for Active Record
-gem 'mysql2'
-
-# Use SCSS for stylesheets
+gem 'rails', '4.0.3'
 gem 'sass-rails', '~> 4.0.0'
-gem 'bootstrap-sass', '~> 3.1.1'
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'haml-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jbuilder', '~> 1.2'
+gem 'bootstrap-sass', '>= 3.1.1'
+gem 'devise'
+gem 'devise_invitable'
+gem 'figaro'
+gem 'haml-rails'
+gem 'mysql2'
+gem 'dynamic_form'
 
+gem 'workflow', git: 'git@github.com:geekq/workflow.git'
 gem 'friendly_id', '~> 5.0.0'
-gem 'workflow'
 gem 'kaminari'
 gem 'rails_autolink'
 gem 'sitemap_generator'
 
 group :development do
-  gem 'thin'
   gem 'capistrano', '~> 3.1.0'
-  gem 'capistrano-rvm'
   gem 'capistrano-rails'
+  gem 'capistrano-rvm'
   gem 'capistrano-bundler'
+  gem 'puma'
+  gem 'rails_layout'
   gem 'seed_dump'
   gem 'nokogiri'
 end

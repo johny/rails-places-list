@@ -5,6 +5,16 @@ class Place < ActiveRecord::Base
   belongs_to :city, counter_cache: true
   has_many :corrections
 
+  include Workflow
+  workflow do
+    state :disabled do
+      event :enable, :transitions_to => :enabled
+    end
+    state :enabled do
+      event :disable, :transitions_to => :disabled
+    end
+  end
+
 
   def self.crawl
     require 'open-uri'

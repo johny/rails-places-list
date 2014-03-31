@@ -6,6 +6,7 @@
   %thead
     %tr
       %th Name
+      %th Opis?
       %th Slug
       %th Address
       %th Phone
@@ -13,11 +14,16 @@
       %th Workflow state
       %th
       %th
-      %th
   %tbody
     - @places.each do |place|
       %tr
-        %td= place.name
+        %td
+          =link_to place.name, edit_admin_place_path(place)
+        %td
+          - if place.description.blank?
+            %span.glyphicon.glyphicon-remove
+          - else
+            %span.glyphicon.glyphicon-ok
         %td= place.slug
         %td
           = place.street_address
@@ -31,7 +37,6 @@
           = place.email
         %td
           = place.workflow_state
-        %td= link_to 'Show', admin_place_path(place)
         %td= link_to 'Edit', edit_admin_place_path(place)
         %td= link_to 'Destroy', admin_place_path(place), :method => :delete, :data => { :confirm => 'Are you sure?' }
 

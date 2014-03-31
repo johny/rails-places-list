@@ -33,7 +33,13 @@ class Admin::PlacesController < Admin::AdminController
   # PATCH/PUT /places/1
   def update
     if @place.update(place_params)
-      redirect_to admin_places_path, notice: 'Place was successfully updated.'
+      flash[:notice] = 'Place was successfully updated.'
+      if params[:commit].match(/next/)
+        next_place = Place.find(@place.id + 1)
+        redirect_to edit_admin_place_path(next_place)
+      else
+        redirect_to admin_places_path
+      end
     else
       render action: 'edit'
     end

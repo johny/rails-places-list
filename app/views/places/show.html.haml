@@ -8,9 +8,7 @@
 
 %div.row
   %div.col-xs-8
-    - if @place.description
-      = simple_format auto_link @place.description
-    - else
+    - if @place.description.blank?
       /googleoff: index
       %div.well
         - if @place.corrections.size > 0
@@ -20,6 +18,8 @@
           %p Ten salon nie posiada jeszcze swojego opisu.
           = link_to "Dodaj opis", new_place_correction_path(@place), class: "btn btn-primary"
       /googleon: index
+    - else
+      = simple_format auto_link @place.description
     .panel.panel-default
       .panel-heading
         %h3.panel-title Komentarze i opinie

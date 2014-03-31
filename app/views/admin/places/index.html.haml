@@ -12,8 +12,7 @@
       %th Phone
       %th Website / Email
       %th Workflow state
-      %th
-      %th
+      %th{colspan: 2} Actions
   %tbody
     - @places.each do |place|
       %tr
@@ -37,8 +36,11 @@
           = place.email
         %td
           = place.workflow_state
-        %td= link_to 'Edit', edit_admin_place_path(place)
-        %td= link_to 'Destroy', admin_place_path(place), :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td
+          = link_to "Show", city_place_path(place.city, place)
+        %td
+          = link_to 'Edit', edit_admin_place_path(place)
+          -#= link_to 'Destroy', admin_place_path(place), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 
 %br

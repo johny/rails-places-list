@@ -37,7 +37,8 @@
         %td
           = place.workflow_state
         %td
-          = link_to "Show", city_place_path(place.city, place)
+          - unless place.city.nil?
+            = link_to "Show", city_place_path(place.city, place)
         %td
           = link_to 'Edit', edit_admin_place_path(place)
           -#= link_to 'Destroy', admin_place_path(place), :method => :delete, :data => { :confirm => 'Are you sure?' }

@@ -1,5 +1,5 @@
 class CitiesController < ApplicationController
   def index
-    @cities = City.public
+    @cities = City.displayed
   end
 end

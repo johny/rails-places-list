@@ -16,6 +16,6 @@ class City < ActiveRecord::Base
   end
 
 
-  scope :public, -> { where(workflow_state: "enabled").order(places_count: :desc)}
+  scope :displayed, -> { where(workflow_state: "enabled").order(places_count: :desc)}
 
 end
